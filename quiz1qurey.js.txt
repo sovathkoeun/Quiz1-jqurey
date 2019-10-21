@@ -1,0 +1,19 @@
+$(document).ready(function(){
+    $('button').on('click',function(){
+        var username = $('#user').val();
+        var password = $('#pass').val();
+        var email    = $('#email').val();
+        username == "" ? setError('user','u-label') : setSuccess('user','u-label');
+        password == "" ? setError('pass','p-label') : setSuccess('pass','p-label');
+        email    == "" ? setError('email','e-label') : setSuccess('email','e-label');
+    });
+});
+
+function setSuccess(success, label){
+    $('#' + success).addClass('border-success').removeClass('border-danger');
+    $('#' + label).addClass('text-success').removeClass('text-danger');
+}
+function setError(Error, label){
+    $('#' + Error).addClass('border-danger').removeClass('border-success');
+    $('#' + label).addClass('text-danger').removeClass('text-success');
+}
